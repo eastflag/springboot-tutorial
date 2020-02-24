@@ -29,6 +29,7 @@ dependencies {
     compileOnly('org.projectlombok:lombok')
     annotationProcessor 'org.projectlombok:lombok'
 
+    testCompile('junit:junit')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompileOnly('org.projectlombok:lombok')
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
