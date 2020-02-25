@@ -8,9 +8,17 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class PostsRequestDto {
+    private Long id;
     private String title;
     private String content;
     private String author;
+
+    public PostsRequestDto (Posts entity) {
+        this.id = entity.getId();
+        this.title = entity.getTitle();
+        this.content = entity.getContent();
+        this.author = entity.getAuthor();
+    }
 
     @Builder
     public PostsRequestDto(String title, String content, String author) {
