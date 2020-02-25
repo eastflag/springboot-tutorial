@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @NoArgsConstructor
 public class PostsRequestDto {
@@ -12,12 +14,16 @@ public class PostsRequestDto {
     private String title;
     private String content;
     private String author;
+    private LocalDateTime createdDate;
+    private LocalDateTime modifiedDate;
 
     public PostsRequestDto (Posts entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.content = entity.getContent();
         this.author = entity.getAuthor();
+        this.createdDate = entity.getCreatedDate();
+        this.modifiedDate = entity.getModifiedDate();
     }
 
     @Builder

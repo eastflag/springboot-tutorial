@@ -5,9 +5,10 @@ import kr.co.eastflag.web.domain.posts.PostsRepository;
 import kr.co.eastflag.web.dto.PostsRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -31,5 +32,10 @@ public class PostsService {
     public PostsRequestDto findById(Long id) {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException(""));
         return new PostsRequestDto(posts);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsRequestDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream().map(posts -> new PostsRequestDto(posts)).collect(Collectors.toList());
     }
 }
