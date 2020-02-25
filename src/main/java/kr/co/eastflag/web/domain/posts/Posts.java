@@ -1,5 +1,6 @@
 package kr.co.eastflag.web.domain.posts;
 
+import kr.co.eastflag.web.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Getter
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
