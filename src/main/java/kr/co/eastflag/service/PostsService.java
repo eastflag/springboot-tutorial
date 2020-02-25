@@ -38,4 +38,9 @@ public class PostsService {
     public List<PostsRequestDto> findAllDesc() {
         return postsRepository.findAllDesc().stream().map(posts -> new PostsRequestDto(posts)).collect(Collectors.toList());
     }
+
+    public Long delete(Long id) {
+        postsRepository.deleteById(id);
+        return id;
+    }
 }

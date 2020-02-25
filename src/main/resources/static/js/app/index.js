@@ -3,10 +3,13 @@ var main = {
     var _this = this;
     $('#btn-save').on('click', function () {
       _this.save();
-    })
+    });
     $('#btn-update').on('click', function () {
       _this.update();
-    })
+    });
+    $('#btn-delete').on('click', function () {
+      _this.delete();
+    });
   },
   save: function () {
     var data = {
@@ -48,7 +51,25 @@ var main = {
     }).fail(function (error) {
       alert('fail.' + JSON.stringify(error));
     });
-  }
+  },
+  delete:  function () {
+    if (!confirm('삭제하시겠습니까?')) {
+      return;
+    }
+
+    var id = $('#id').val();
+
+    $.ajax({
+      type: 'DELETE',
+      url: '/api/v1/posts/' + id,
+      dataType: 'json',
+    }).done(function () {
+      alert('글이 삭제되었습니다.');
+      location.href = '/';
+    }).fail(function (error) {
+      alert('fail.' + JSON.stringify(error));
+    });
+  },
 }
 
 main.init();
