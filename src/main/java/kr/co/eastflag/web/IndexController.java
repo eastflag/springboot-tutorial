@@ -1,5 +1,6 @@
 package kr.co.eastflag.web;
 
+import kr.co.eastflag.config.auth.LoginUser;
 import kr.co.eastflag.config.auth.SessionUser;
 import kr.co.eastflag.service.PostsService;
 import lombok.RequiredArgsConstructor;
@@ -15,12 +16,11 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String IndexController(Model model) {
+    public String IndexController(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
