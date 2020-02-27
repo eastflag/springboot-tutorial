@@ -34,7 +34,7 @@ public class EnumTest {
         System.out.println("ofNullable on Empty Optional: " + Optional.ofNullable(answer2));
 
         // java.lang.NullPointerException
-        System.out.println("ofNullable on Non-Empty Optional: " + Optional.of(answer2));
+//        System.out.println("ofNullable on Non-Empty Optional: " + Optional.of(answer2));
     }
 
     @Test
