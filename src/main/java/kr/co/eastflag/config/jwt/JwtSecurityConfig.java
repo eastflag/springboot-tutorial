@@ -17,6 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 // https://medium.com/swlh/spring-boot-security-jwt-hello-world-example-b479e457664c
+// https://velog.io/@tlatldms/Spring-boot-Spring-security-JWT-Redis-mySQL-2%ED%8E%B8#custom-filter-%EB%A7%8C%EB%93%A4%EA%B8%B0
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
