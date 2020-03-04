@@ -16,6 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+// https://medium.com/swlh/spring-boot-security-jwt-hello-world-example-b479e457664c
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
