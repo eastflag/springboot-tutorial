@@ -1,3 +1,6 @@
+jwt:
+  secret: eastflag
+
 spring:
   jpa:
     show-sql: true
